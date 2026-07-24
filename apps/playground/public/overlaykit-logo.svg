@@ -1,0 +1,40 @@
+<svg
+  width="320"
+  height="100"
+  viewBox="0 0 320 100"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect
+    width="320"
+    height="100"
+    rx="24"
+    fill="#111827"
+  />
+
+  <circle
+    cx="54"
+    cy="50"
+    r="30"
+    fill="#7C3AED"
+  />
+
+  <path
+    d="M42 35V65M42 50L63 35M42 50L63 65"
+    stroke="white"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <text
+    x="98"
+    y="61"
+    fill="white"
+    font-size="32"
+    font-family="Arial, sans-serif"
+    font-weight="700"
+  >
+    OverlayKit
+  </text>
+</svg>

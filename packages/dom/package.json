@@ -1,0 +1,30 @@
+{
+  "name": "@overlay-kit/dom",
+  "version": "0.1.0",
+  "description": "DOM adapter for OverlayKit.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@overlay-kit/core": "workspace:*",
+    "@overlay-kit/shared": "workspace:*"
+  }
+}

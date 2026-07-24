@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta
+      name="description"
+      content="Exemplo Vanilla JS do OverlayKit"
+    />
+
+    <title>OverlayKit — Vanilla Example</title>
+  </head>
+
+  <body>
+    <main class="page">
+      <section class="hero">
+        <span class="eyebrow">OverlayKit</span>
+
+        <h1>Exemplo Vanilla JS</h1>
+
+        <p>
+          Controle um overlay real utilizando apenas TypeScript,
+          DOM e os pacotes do monorepo.
+        </p>
+      </section>
+
+      <section class="preview">
+        <div class="preview-content">
+          <span>Área de demonstração</span>
+
+          <h2>O overlay aparece sobre esta página.</h2>
+
+          <p>
+            Use os controles abaixo para atualizar, ocultar,
+            exibir e remover o elemento.
+          </p>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="show-button" type="button">
+          Exibir
+        </button>
+
+        <button id="hide-button" type="button">
+          Ocultar
+        </button>
+
+        <button id="toggle-button" type="button">
+          Alternar
+        </button>
+
+        <button id="position-button" type="button">
+          Mudar posição
+        </button>
+
+        <button id="opacity-button" type="button">
+          Mudar opacidade
+        </button>
+
+        <button id="destroy-button" type="button">
+          Remover
+        </button>
+      </section>
+
+      <p id="status" class="status">
+        Overlay criado.
+      </p>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
