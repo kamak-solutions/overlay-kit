@@ -12,45 +12,23 @@ afterEach(() => {
 
 describe("Overlay", () => {
   it("creates the overlay when mounted", () => {
-    render(
-      <Overlay
-        src="/logo.svg"
-        position="bottom-right"
-        size={120}
-        offset={24}
-      />,
-    );
+    render(<Overlay src="/logo.svg" position="bottom-right" size={120} offset={24} />);
 
-    const image = document.querySelector(
-      'img[src="/logo.svg"]',
-    );
+    const image = document.querySelector('img[src="/logo.svg"]');
 
     expect(image).not.toBeNull();
   });
 
   it("removes the overlay when unmounted", () => {
     const result = render(
-      <Overlay
-        src="/logo.svg"
-        position="bottom-right"
-        size={120}
-        offset={24}
-      />,
+      <Overlay src="/logo.svg" position="bottom-right" size={120} offset={24} />,
     );
 
-    expect(
-      document.querySelector(
-        'img[src="/logo.svg"]',
-      ),
-    ).not.toBeNull();
+    expect(document.querySelector('img[src="/logo.svg"]')).not.toBeNull();
 
     result.unmount();
 
-    expect(
-      document.querySelector(
-        'img[src="/logo.svg"]',
-      ),
-    ).toBeNull();
+    expect(document.querySelector('img[src="/logo.svg"]')).toBeNull();
   });
 
   it("updates the overlay when props change", () => {
@@ -74,10 +52,7 @@ describe("Overlay", () => {
       />,
     );
 
-    const image = document.querySelector(
-      'img[src="/logo.svg"]',
-    ) as HTMLImageElement | null;
-
+    const image = document.querySelector<HTMLImageElement>('img[src="/logo.svg"]');
     expect(image).not.toBeNull();
     expect(image?.style.width).toBe("180px");
     expect(image?.style.opacity).toBe("0.5");

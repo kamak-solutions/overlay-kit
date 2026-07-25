@@ -8,6 +8,7 @@ export default tseslint.config(
       "**/dist/**",
       "**/coverage/**",
       "**/node_modules/**",
+      "**/.packs/**",
       "**/*.config.js",
     ],
   },
@@ -17,17 +18,28 @@ export default tseslint.config(
   ...tseslint.configs.recommendedTypeChecked,
 
   {
-    files: ["packages/**/*.ts", "packages/**/*.tsx"],
+    files: ["**/*.{ts,tsx}"],
+
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: [
+            "vitest.config.ts",
+            "packages/react/tsup.config.ts",
+            "packages/react/tests/Overlay.test.tsx",
+            "packages/react/tests/useOverlay.test.tsx",
+          ],
+        },
+
         tsconfigRootDir: import.meta.dirname,
       },
+
       globals: {
         ...globals.browser,
         ...globals.node,
       },
     },
+
     rules: {
       "@typescript-eslint/consistent-type-imports": [
         "error",
@@ -36,9 +48,22 @@ export default tseslint.config(
           fixStyle: "inline-type-imports",
         },
       ],
+
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/no-floating-promises": "error",
       "@typescript-eslint/no-misused-promises": "error",
+    },
+  },
+
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+
+    extends: [tseslint.configs.disableTypeChecked],
+
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
     },
   },
 );

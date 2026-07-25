@@ -1,11 +1,7 @@
 // @vitest-environment happy-dom
 
 import { afterEach, describe, expect, it } from "vitest";
-import {
-  act,
-  cleanup,
-  renderHook,
-} from "@testing-library/react";
+import { act, cleanup, renderHook } from "@testing-library/react";
 
 import { useOverlay } from "../src";
 
@@ -27,11 +23,7 @@ describe("useOverlay", () => {
 
     expect(result.current.isMounted).toBe(true);
 
-    expect(
-      document.querySelector(
-        'img[src="/logo.svg"]',
-      ),
-    ).not.toBeNull();
+    expect(document.querySelector('img[src="/logo.svg"]')).not.toBeNull();
   });
 
   it("shows and hides the overlay", () => {
@@ -107,9 +99,7 @@ describe("useOverlay", () => {
       });
     });
 
-    const image = document.querySelector(
-      'img[src="/logo.svg"]',
-    ) as HTMLImageElement | null;
+    const image = document.querySelector<HTMLImageElement>('img[src="/logo.svg"]');
 
     expect(image?.style.width).toBe("200px");
     expect(image?.style.opacity).toBe("0.4");
@@ -131,10 +121,6 @@ describe("useOverlay", () => {
 
     expect(result.current.isMounted).toBe(false);
 
-    expect(
-      document.querySelector(
-        'img[src="/logo.svg"]',
-      ),
-    ).toBeNull();
+    expect(document.querySelector('img[src="/logo.svg"]')).toBeNull();
   });
 });
