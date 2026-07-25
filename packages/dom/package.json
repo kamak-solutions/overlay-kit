@@ -1,6 +1,6 @@
 {
   "name": "@overlay-kit/dom",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DOM adapter for OverlayKit.",
   "license": "MIT",
   "type": "module",
