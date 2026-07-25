@@ -1,3 +1,64 @@
+# OverlayKit
+
+Universal overlay and watermark library for JavaScript, TypeScript and React.
+
+<p align="center">
+
+<a href="https://www.npmjs.com/package/@overlay-kit/dom">
+    <img src="https://img.shields.io/npm/v/@overlay-kit/dom.svg" alt="npm">
+</a>
+
+<a href="https://overlay-kit-playground-7ttx.vercel.app">
+    <img src="https://img.shields.io/badge/Live-Demo-7c3aed?style=for-the-badge" alt="Live Demo">
+</a>
+
+<a href="https://github.com/kamak-solutions/overlay-kit">
+    <img src="https://img.shields.io/github/license/kamak-solutions/overlay-kit" alt="License">
+</a>
+
+</p>
+
+---
+
+## 🚀 Live Demo
+
+👉 **https://overlay-kit-playground-7ttx.vercel.app**
+
+Try the library directly in your browser.
+
+---
+
+## Installation
+
+```bash
+npm install @overlay-kit/dom
+```
+
+or
+
+```bash
+pnpm add @overlay-kit/dom
+```
+
+---
+
+## Quick Example
+
+```ts
+import { createOverlayManager } from "@overlay-kit/dom";
+
+const manager = createOverlayManager();
+
+document.querySelectorAll(".card").forEach((card) => {
+  manager.create({
+    container: card,
+    src: "/logo.png",
+    position: "bottom-right",
+    size: "20%",
+    opacity: 0.8,
+  });
+});
+```
 <div align="center">
 
 # OverlayKit
