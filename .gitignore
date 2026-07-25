@@ -7,3 +7,5 @@ coverage
 .env
 .env.*
 !.env.example
+# Local npm package archives
+.packs/

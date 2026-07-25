@@ -2,7 +2,7 @@
   "name": "overlay-kit-monorepo",
   "version": "0.1.0",
   "private": true,
-  "description": "Universal overlay toolkit for web applications",
+  "description": "Universal overlay toolkit for modern web applications.",
   "type": "module",
   "packageManager": "pnpm@10.31.0",
   "engines": {
@@ -14,11 +14,22 @@
     "dev": "pnpm --recursive --parallel --if-present run dev",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "typecheck": "pnpm --recursive --if-present run typecheck",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean": "pnpm --recursive --if-present run clean"
+    "clean": "pnpm --recursive --if-present run clean",
+    "validate": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "pack:check": "pnpm --filter './packages/*' pack --pack-destination ../../.packs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamak-solutions/overlay-kit.git"
+  },
+  "homepage": "https://github.com/kamak-solutions/overlay-kit#readme",
+  "bugs": {
+    "url": "https://github.com/kamak-solutions/overlay-kit/issues"
   },
   "keywords": [
     "overlay",
@@ -29,8 +40,10 @@
     "typescript",
     "javascript",
     "react",
+    "dom",
     "web"
   ],
+  "author": "Kamak",
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "10.0.1",
